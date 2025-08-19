@@ -1,18 +1,42 @@
-import Image from "next/image";
+import Link from "next/link";
+import PageLayout from "../components/PageLayout";
 
 export default function Home() {
   return (
-    <div>
-      <header>
-        <h1>Infoweb - Atividade 1 do 2o bimestre</h1>
-      </header>
-      <main>
-        <h2>Atividade 1 do 2o bimestre com hook reducer e shadcnui</h2>
-      </main>
-      <footer>
-        <p>GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007</p>
-        <p><a href="https://fsf.org/">Copyright (C) 2007 Free Software Foundation, Inc.</a></p>
-      </footer>
-    </div>
+    <PageLayout title="Gerenciador de Tarefas">
+      <div className="text-center max-w-2xl mx-auto">
+        <div className="mb-8">
+          <h2 className="text-xl text-gray-600 mb-4">
+            Organize suas tarefas de forma simples e eficiente
+          </h2>
+          <p className="text-gray-500">
+            Com este aplicativo você tem um CRUD de suas tarefas.
+            Todos os dados são salvos localmente no navegador.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+          <div className="p-4 border rounded-lg">
+            <h3 className="font-semibold mb-2">Criar Tarefas</h3>
+            <p className="text-sm text-gray-600">Adicione novas tarefas com título e descrição</p>
+          </div>
+          <div className="p-4 border rounded-lg">
+            <h3 className="font-semibold mb-2">Marcar como Concluídas</h3>
+            <p className="text-sm text-gray-600">Acompanhe o progresso das suas atividades</p>
+          </div>
+          <div className="p-4 border rounded-lg">
+            <h3 className="font-semibold mb-2">Organizar</h3>
+            <p className="text-sm text-gray-600">Edite ou remova tarefas conforme necessário</p>
+          </div>
+        </div>
+
+        <Link
+          href="/tarefas"
+          className="inline-block bg-blue-500 text-white px-8 py-3 rounded-lg hover:bg-blue-600 transition-colors text-lg font-medium"
+        >
+          Acessar Lista de Tarefas
+        </Link>
+      </div>
+    </PageLayout>
   );
 }
